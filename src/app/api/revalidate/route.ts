@@ -1,20 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
- 
-export async function POST(request: NextRequest) {
-  const secret = request.nextUrl.searchParams.get('secret');
-  const slug = request.nextUrl.searchParams.get('slug');
- 
-  if (secret !== process.env.REVALIDATE_SECRET) {
-    return NextResponse.json({ message: 'Invalid secret' }, { status: 401 });
-  }
- 
+import { revalidatePath } from 'next/cache';
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const slug = searchParams.get('slug');
+
     if (slug) {
-      await res.revalidate(`/article/${slug}`);
-      await res.revalidate('/');
+      revalidatePath(`/article/${slug}`);
+      revalidatePath('/');
       return NextResponse.json({ revalidated: true, now: Date.now() });
     } else {
-      await res.revalidate('/', { recursive: true });
+      revalidatePath('/');
       return NextResponse.json({ revalidated: true, now: Date.now() });
     }
   } catch (err) {
