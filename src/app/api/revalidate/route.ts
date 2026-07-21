@@ -1,20 +1,21 @@
-import { revalidatePath } from 'next/cache';
-import { NextResponse } from 'next/server';
+export type Language = 'en' | 'am';
 
-export async function POST(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const slug = searchParams.get('slug');
-
-    if (slug) {
-      revalidatePath(`/article/${slug}`);
-      revalidatePath('/');
-      return NextResponse.json({ revalidated: true, now: Date.now() });
-    } else {
-      revalidatePath('/');
-      return NextResponse.json({ revalidated: true, now: Date.now() });
-    }
-  } catch (err) {
-    return NextResponse.json({ message: 'Error revalidating' }, { status: 500 });
-  }
+export interface Translations {
+  [key: string]: any;
 }
+
+const translations: Record<string, any> = {
+  en: {
+    // English translations
+  },
+  am: {
+    // Amharic translations
+  }
+};
+
+export const getDictionary = (lang: string) => {
+  const dictionary = translations as Record<string, any>;
+  return dictionary[lang] || dictionary['en'] || dictionary['am'];
+};
+
+export default translations;
