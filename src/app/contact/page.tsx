@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone, Twitter, Youtube, Linkedin, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { FaYoutube, FaFacebook, FaTelegram, FaTiktok, FaInstagram } from 'react-icons/fa6';
 import Link from 'next/link';
 import T from '@/components/ui/T';
 import ContactForm from '@/components/ui/ContactForm';
@@ -8,16 +9,18 @@ export const metadata = { title: 'Contact Us | Shambel App' };
 
 export default function ContactPage() {
   const contactInfo = [
-    { icon: Mail, label_en: "Email", label_am: "ኢሜል", value: "hello@shambelapp.com", href: "mailto:hello@shambelapp.com" },
-    { icon: Phone, label_en: "Phone", label_am: "ስልክ", value: "+251 900 000 000", href: "tel:+251900000000" },
+    { icon: Mail, label_en: "Email", label_am: "ኢሜል", value: "shamble2025@gmail.com", href: "mailto:shamble2025@gmail.com" },
+    { icon: Phone, label_en: "Phone", label_am: "ስልክ", value: "+251 909693472", href: "tel:+251909693472" },
     { icon: MapPin, label_en: "Location", label_am: "ቦታ", value: "Addis Ababa, Ethiopia", href: null },
   ];
 
-  const socials = [
-    { icon: Twitter, href: siteConfig.social.twitter },
-    { icon: Youtube, href: siteConfig.social.youtube },
-    { icon: Linkedin, href: siteConfig.social.linkedin },
-  ];
+const socials = [
+  { icon: FaYoutube, href: "https://www.youtube.com/@shambleapptube" },
+  { icon: FaFacebook, href: "https://www.facebook.com/shambelapp" },
+  { icon: FaTelegram, href: "https://t.me/shambleshifere" },
+  { icon: FaTiktok, href: "https://www.tiktok.com/@shambleshifere" },
+  { icon: FaInstagram, href: "https://www.instagram.com/shamble_app_tube" },
+];
 
   return (
     <main className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
@@ -60,13 +63,22 @@ export default function ContactPage() {
             </div>
             <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
               <p className="text-sm text-gray-400 mb-4"><T en="Follow Us" am="ከእኛ ጋር ይከታተሉ" /></p>
-              <div className="flex gap-3">
-                {socials.map((social, i) => (
-                  <Link key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-accent hover:text-black transition-colors text-gray-700 dark:text-gray-300">
-                    <social.icon className="w-4 h-4" />
-                  </Link>
-                ))}
-              </div>
+           <div className="flex gap-3">
+  {socials.map((social, i) => {
+    const Icon = social.icon;
+    return (
+      <Link
+        key={i}
+        href={social.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 transition-all duration-300 group hover:scale-110 hover:!bg-[#FF0000] [&:nth-child(2)]:hover:!bg-[#1877F2] [&:nth-child(3)]:hover:!bg-[#24A1DE] [&:nth-child(4)]:hover:!bg-black dark:[&:nth-child(4)]:hover:!bg-white [&:nth-child(5)]:hover:!bg-[#E4405F]"
+      >
+        <Icon className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white [&:nth-child(4)]:group-hover:dark:!text-black transition-colors" />
+      </Link>
+    );
+  })}
+</div>
             </div>
           </div>
 

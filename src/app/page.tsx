@@ -87,18 +87,22 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
         <h3 className="text-xl font-extrabold text-primary dark:text-white tracking-tight mb-6 text-center"><T en="Browse by Topic" am="በርዕስ ያስሱ" /></h3>
         <div className="flex flex-wrap justify-center gap-3">
-          {[
-            { en: 'Artificial Intelligence', am: 'ሰው ሰራሽ አስተውቀር' },
-            { en: 'Android', am: 'አንድሮይድ' },
-            { en: 'Cyber Security', am: 'ሳይበር ደህንነት' },
-            { en: 'Tech News', am: 'የቴክ ዜና' },
-            { en: 'ChatGPT & Gemini', am: 'ቻትጂፒቲ እና ጄሚኒ' },
-            { en: 'Apps & Tips', am: 'መተግበሪያዎች እና ጠቋሚዎች' }
-          ].map(topic => (
-            <Link key={topic.en} href={`/category/${topic.en.toLowerCase().replace(/\s/g, '-')}`} className="px-5 py-2.5 bg-gray-100 dark:bg-primary-light rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-accent dark:hover:text-black transition-colors">
-              <T en={topic.en} am={topic.am} />
-            </Link>
-          ))}
+       {[
+          { en: 'Artificial Intelligence', am: 'ሰው ሰራሽ አስተዋፆ', slug: 'artificial-intelligence' },
+          { en: 'Android', am: 'አንድሮይድ', slug: 'android' },
+          { en: 'Cyber Security', am: 'ሳይበር ደህንነት', slug: 'cyber-security' },
+          { en: 'Tech News', am: 'የቴክ ዜና', slug: 'tech-news' },
+          { en: 'Apps & Tips', am: 'መተግበሪያዎች እና ጠቃሚዎች', slug: 'apps-&-tips' },
+          { en: 'Video Tutorials', am: 'የቪዲዮ ትምህርቶች', href: '/videos' }
+        ].map(topic => (
+          <Link 
+            key={topic.en} 
+            href={topic.href ? topic.href : `/category/${topic.slug}`} 
+            className="px-5 py-2.5 bg-gray-100 dark:bg-primary-light text-primary dark:text-white rounded-full text-sm font-medium hover:bg-accent hover:text-white dark:hover:bg-accent transition-colors"
+          >
+            <T en={topic.en} am={topic.am} />
+          </Link>
+        ))}
         </div>
       </section>
 

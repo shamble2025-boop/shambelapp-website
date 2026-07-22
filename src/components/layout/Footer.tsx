@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Youtube, Linkedin, Github } from 'lucide-react';
+import { FaYoutube, FaFacebook, FaTelegram, FaTiktok, FaInstagram } from 'react-icons/fa6';
 import T from '@/components/ui/T';
 import { siteConfig } from '@/config/site';
 import BackToTop from '@/components/ui/BackToTop';
@@ -17,12 +17,57 @@ export default function Footer() {
               <span className="text-lg font-bold text-black dark:text-white tracking-tight">Shambel App</span>
             </div>
             <p className="text-sm text-gray-500 max-w-xs"><T en="Learn Technology. Grow Faster. Build Your Future. Premium tutorials for the modern user." am="ቴክኖሎጂ ይማሩ። ፈጣን ያደጉ። የእርስዎን የወያጅ ይገንቡ። ለአሁኑ ተጠቃሚ ቆንጆ ማስተማሪያዎች።" /></p>
-            <div className="flex gap-3 mt-6">
-              <Link href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-accent hover:text-black transition-colors text-gray-700 dark:text-gray-300"><Twitter className="w-4 h-4" /></Link>
-              <Link href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-accent hover:text-black transition-colors text-gray-700 dark:text-gray-300"><Youtube className="w-4 h-4" /></Link>
-              <Link href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-accent hover:text-black transition-colors text-gray-700 dark:text-gray-300"><Linkedin className="w-4 h-4" /></Link>
-              <Link href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-accent hover:text-black transition-colors text-gray-700 dark:text-gray-300"><Github className="w-4 h-4" /></Link>
-            </div>
+          <div className="flex gap-3 mt-6">
+  {/* YouTube */}
+  <Link 
+    href="https://www.youtube.com/@shambleapptube" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:!bg-[#FF0000] transition-all duration-300 group"
+  >
+    <FaYoutube className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white transition-colors" />
+  </Link>
+
+  {/* Facebook */}
+  <Link 
+    href="https://www.facebook.com/shambelapp" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:!bg-[#1877F2] transition-all duration-300 group"
+  >
+    <FaFacebook className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white transition-colors" />
+  </Link>
+
+  {/* Telegram */}
+  <Link 
+    href="https://t.me/shambleshifere" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:!bg-[#24A1DE] transition-all duration-300 group"
+  >
+    <FaTelegram className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white transition-colors" />
+  </Link>
+
+  {/* TikTok */}
+  <Link 
+    href="https://www.tiktok.com/@shambleshifere" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:!bg-black dark:hover:!bg-white transition-all duration-300 group"
+  >
+    <FaTiktok className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white dark:group-hover:!text-black transition-colors" />
+  </Link>
+
+  {/* Instagram */}
+  <Link 
+    href="https://www.instagram.com/shamble_app_tube" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:!bg-[#E4405F] transition-all duration-300 group"
+  >
+    <FaInstagram className="w-5 h-5 text-gray-800 dark:text-white group-hover:!text-white transition-colors" />
+  </Link>
+</div>
           </div>
           <div>
             <h4 className="font-bold text-sm text-primary dark:text-white mb-4 uppercase tracking-wider"><T en="Company" am="ኩባንያ" /></h4>
