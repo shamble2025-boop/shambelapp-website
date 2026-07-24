@@ -7,8 +7,14 @@ import T from '@/components/ui/T';
 export default function ArticleCard({ article }: { article: Article }) {
   return (
     <Link href={article.youtubeId ? `/videos/${article.slug}` : `/article/${article.slug}`} className="minimal-card block group">
-      <div className="relative w-full h-56 overflow-hidden rounded-xl mb-4">
-        <Image src={article.thumbnail} alt={article.title_en} fill className="card-img object-cover transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+      <div className="relative w-full aspect-video overflow-hidden rounded-xl mb-4 bg-gray-100 dark:bg-gray-800">
+        <Image 
+          src={article.thumbnail} 
+          alt={article.title_en} 
+          fill 
+          className="card-img object-cover transition-transform duration-500" 
+          sizes="(max-width: 768px) 100vw, 33vw" 
+        />
         {article.youtubeId && (
           <div className="absolute top-4 right-4 bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full uppercase flex items-center gap-1 z-10">
             <Play className="w-3 h-3" fill="white" /> <T en="Video" am="ቪዲዮ" />

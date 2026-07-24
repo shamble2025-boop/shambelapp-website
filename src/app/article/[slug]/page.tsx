@@ -1,13 +1,14 @@
 import { getArticleBySlug, getRelatedArticles } from '@/services/api.service';
-import AuthorCard from '@/components/article/AuthorCard';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Eye, Clock, Home } from 'lucide-react';
 import ShareButtons from '@/components/article/ShareButtons';
 import CommentSection from '@/components/article/CommentSection';
 import ArticleCard from '@/components/ui/ArticleCard';
-import T from '@/components/ui/T';
+import AuthorCard from '@/components/article/AuthorCard';
 import ReadingProgress from '@/components/ui/ReadingProgress';
+import T from '@/components/ui/T';
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = await getArticleBySlug(params.slug);
   if (!article) return { title: 'Article Not Found | Shambel App' };
@@ -28,8 +29,7 @@ export default async function ArticleDetail({ params }: { params: { slug: string
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 relative">
-  <ReadingProgress />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: article.title_en, image: [article.thumbnail], datePublished: article.date_en, author: [{ '@type': 'Person', name: article.author }] }) }} />
+      <ReadingProgress />
       
       <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
         <Link href="/" className="hover:text-accent flex items-center gap-1"><Home className="w-3 h-3" /> <T en="Home" am="መነሻ" /></Link> /
@@ -41,7 +41,11 @@ export default async function ArticleDetail({ params }: { params: { slug: string
       </h1>
       <p className="text-xl text-gray-500 dark:text-gray-400 mt-4"><T en={article.excerpt_en} am={article.excerpt_am} /></p>
 
-      <div className="flex items-center justify-between flex-wrap gap-4 mt-8 pb-6 border-b border-gray-100 dark:border-gray-800">
+      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-soft my-8">
+        <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
+      </div>
+
+      <div className="flex items-center justify-between flex-wrap gap-4 mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
         <div className="flex items-center gap-6 text-gray-500 dark:text-gray-400 text-sm">
           <span className="flex items-center gap-2 font-medium text-gray-700 dark:text-gray-300">
             <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black font-bold">{article.author[0]}</div>
@@ -54,9 +58,6 @@ export default async function ArticleDetail({ params }: { params: { slug: string
         <ShareButtons url={shareUrl} title={shareTitle} />
       </div>
 
-      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-soft my-8">
-        <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
-      </div>
       <div 
         className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-en"
         dangerouslySetInnerHTML={{ __html: article.content_en || '' }} 
@@ -66,13 +67,13 @@ export default async function ArticleDetail({ params }: { params: { slug: string
         dangerouslySetInnerHTML={{ __html: article.content_am || '' }} 
       />
 
-      <AuthorCard />
+      <CommentSection articleId={article.id} />
 
       <div className="my-12 h-32 w-full bg-gray-100 dark:bg-gray-900 border border-dashed border-gray-300 dark:border-gray-700 rounded-2xl flex items-center justify-center">
         <span className="text-gray-400 text-xs font-mono uppercase tracking-widest"><T en="Advertisement Space" am="የማስታወቂያ ቦታ" /></span>
       </div>
 
-      <CommentSection articleId={article.id} />
+      <AuthorCard />
 
       {related.length > 0 && (
         <section className="mt-16">
