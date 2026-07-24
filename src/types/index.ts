@@ -8,5 +8,7 @@ export interface Article {
   content_en?: string; content_am?: string;
   tags_en?: string[]; tags_am?: string[];
   keywords_en?: string[]; keywords_am?: string[];
+  youtubeId?: string; 
+  duration?: string;  
 }
 export interface Video { id: string; thumbnail: string; youtubeId: string; duration: string; title_en: string; title_am: string; }

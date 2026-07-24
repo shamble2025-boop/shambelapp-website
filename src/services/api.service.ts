@@ -28,9 +28,7 @@ const mapArticle = (raw: any): Article => ({
 
 const mockArticles: Article[] = [
   { id: 1, slug: 'mastering-chatgpt', thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80', author: 'Shambel', views: 15400, readingTime: 8, title_en: 'Mastering ChatGPT: Advanced Prompt Engineering', title_am: 'ቻትጂፒቲ መቆጣጠር: የላቀ ፕሮምፕት ምህንድስና', excerpt_en: 'Learn how to structure prompts to get production-ready code from AI models.', excerpt_am: 'ከሰው ሰራሽ አስተውቀር ሞዴሎች ምርት ለማምረት ዝግጁ ባለ ኮድ ለማግኘት ፕሮምፕቶችን እንዴት እንደሚያደራጁ ይማሩ።', category_en: 'ChatGPT & Gemini', category_am: 'ቻትጂፒቲ እና ጄሚኒ', date_en: 'May 20, 2024', date_am: 'ግንቦት 20፣ 2024', content_en: '<p>Advanced prompt engineering is the key to unlocking the true potential of large language models...</p>', content_am: '<p>የላቀ የፕሮምፕት ምህንድስና ትልቅ የቋንቋ ሞዴሎችን እውነተኛ አቅም ለመክፈት ቁልፍ ነው...</p>', tags_en: ['ChatGPT', 'Prompt Engineering', 'AI'], tags_am: ['ቻትጂፒቲ', 'ፕሮምፕት'], keywords_en: ['chatgpt', 'ai', 'prompts'] },
-  { id: 2, slug: 'android-14-security', thumbnail: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=900&q=80', author: 'Shambel', views: 8200, readingTime: 5, title_en: 'Android 14: Hidden Security Features You Need', title_am: 'አንድሮይድ 14: የሚያስፈልጓችሁ የተደበቁ የደህንነት ባህሪያት', excerpt_en: 'Explore the new sandboxing and privacy controls introduced in the latest Android update.', excerpt_am: 'ባለፈው የአንድሮይድ ዝመና የቀረቡትን አዲስ ሳንድቦክስ እና የግላዊነት ቁጥጥሮች ያስሱ።', category_en: 'Android', category_am: 'አንድሮይድ', date_en: 'May 18, 2024', date_am: 'ግንቦት 18፣ 2024', content_en: '<p>Android 14 brings a massive overhaul to system security...</p>', content_am: '<p>አንድሮይድ 14 ለስርዓት ደህንነት ግዙፍ ለውጥ ያመጣል...</p>', tags_en: ['Android 14', 'Security', 'Mobile'], tags_am: ['አንድሮይድ 14', 'ደህንነት'], keywords_en: ['android', 'security'] },
-  { id: 10, slug: 'build-full-stack', thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80', author: 'Shambel', views: 15400, readingTime: 10, title_en: 'Build a Full-Stack App in 10 Minutes', title_am: 'ሙሉ ሲስተም በ10 ደቂቃ ይስሩ', excerpt_en: 'Learn full-stack development in this tutorial.', excerpt_am: 'በዚህ ትምህርት ሙሉ ሲስተም መስራት ይማሩ።', category_en: 'Video Tutorials', category_am: 'የቪዲዮ ትምህርቶች', date_en: 'May 20, 2024', date_am: 'ግንቦት 12, 2016', content_en: 'Video tutorial content', content_am: 'የቪዲዮ ትምህርት ይዘት' },
-  { id: 11, slug: 'css-grid-mastery', thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80', author: 'Shambel', views: 12000, readingTime: 5, title_en: 'CSS Grid Mastery', title_am: 'CSS ግሪድ ማስተር', excerpt_en: 'Master CSS grid quickly.', excerpt_am: 'CSS ግሪድን በፍጥነት ይማሩ።', category_en: 'Video Tutorials', category_am: 'የቪዲዮ ትምህርቶች', date_en: 'May 21, 2024', date_am: 'ግንቦት 13, 2016', content_en: 'Video tutorial content', content_am: 'የቪዲዮ ትምህርት ይዘት' },
+  { id: 2, slug: 'android-14-security', thumbnail: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=900&q=80', author: 'Shambel', views: 8200, readingTime: 5, title_en: 'Android 14: Hidden Security Features You Need', title_am: 'አንድሮይድ 14: የሚያስፈልጓችሁ የተደበቁ የደህንነት ባህሪያት', excerpt_en: 'Explore the new sandboxing and privacy controls introduced in the latest Android update.', excerpt_am: 'ባለፈው የአንድሮይድ ዝመና የቀረቡትን አዲስ ሳንድቦክስ እና የግላዊነት ቁጥጥሮች ያስሱ።', category_en: 'Android', category_am: 'አንድሮይድ', date_en: 'May 18, 2024', date_am: 'ግንቦት 18፣ 2024', content_en: '<p>Android 14 brings a massive overhaul to system security...</p>', content_am: '<p>አንድሮይድ 14 ለስርዓት ደህንነት ግዙፍ ለውጥ ያመጣል...</p>', tags_en: ['Android 14', 'Security', 'Mobile'], tags_am: ['አንድሮይድ 14', 'ደህንነት'], keywords_en: ['android', 'security'] }, 
   { id: 3, slug: 'zero-trust-architecture', thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&q=80', author: 'Shambel', views: 12500, readingTime: 12, title_en: 'Zero Trust Architecture: A Complete Guide for 2024', title_am: 'ዜሮ ትራስት አርክቴክቸር: ለ2024 ሙሉ መመሪያ', excerpt_en: 'Understanding the shift from perimeter security to zero trust networks.', excerpt_am: 'ከድንበር ደህንነት ወደ ዜሮ ትራስት ኔትወርክስ መሸጋገሪያን ይረዱ።', category_en: 'Cyber Security', category_am: 'ሳይበር ደህንነት', date_en: 'May 15, 2024', date_am: 'ግንቦት 15፣ 2024', content_en: '<p>Scaling Node.js applications requires careful planning...</p>', content_am: '<p>የኖድ.js መተግበሪያዎችን ማስፋት ጥንቃቄ ይጠይቃል...</p>', tags_en: ['Zero Trust', 'Cyber Security', 'Network'], tags_am: ['ዜሮ ትራስት', 'ሳይበር ደህንነት'], keywords_en: ['cyber security', 'network'] },
   { id: 4, slug: 'm3-max-chip', thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80', author: 'Shambel', views: 9800, readingTime: 4, title_en: 'M3 Max Chip: The Future of Mobile Computing', title_am: 'M3 ማክስ ቺፕ: የሞባይል ኮምፒውቲንግ የወደፊቱ', excerpt_en: 'Exploring Apple\'s latest silicon and what it means for developers.', excerpt_am: 'የአፕልን የአሁኑ ሲሊኮን እና ለዲቨሎፐሮች ምን ማለት እንደሆነ ያስሱ።', category_en: 'Tech News', category_am: 'የቴክ ዜና', date_en: 'May 12, 2024', date_am: 'ግንቦት 12፣ 2024', content_en: '<p>The M3 Max represents a significant leap in ARM architecture...</p>', content_am: '<p>M3 ማክስ በARM አርክቴክቸር ውስጥ ጠቃሚ ዝለት ይወክላል...</p>', tags_en: ['Apple', 'M3 Chip', 'Tech News'], tags_am: ['አፕል', 'ቺፕ'], keywords_en: ['apple', 'm3'] },
   { id: 5, slug: 'ios-18-hidden-features', thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80', author: 'Shambel', views: 21000, readingTime: 6, title_en: '10 Hidden iOS 18 Features You Did Not Know', title_am: '10 የተደበቁ የiOS 18 ባህሪያት ያላወቃችሁት', excerpt_en: 'Maximize your productivity with these hidden iPhone settings.', excerpt_am: 'በእነዚህ የተደበቁ የአይፎን ቅንብሮች ምርታችሁን ያደርጉ።', category_en: 'Apps & Tips', category_am: 'መተግበሪያዎች እና ጠቋሚዎች', date_en: 'May 10, 2024', date_am: 'ግንቦት 10፣ 2024', content_en: '<p>iOS 18 introduces a myriad of quality-of-life improvements...</p>', content_am: '<p>iOS 18 የሕይወት ጥራት ማሻሻያዎችን ያስተዋውቃል...</p>', tags_en: ['iOS 18', 'iPhone', 'Tips'], tags_am: ['አይፎን', 'ጠቋሚዎች'], keywords_en: ['ios', 'iphone'] },
@@ -52,27 +50,98 @@ export const getFeaturedArticles = async (): Promise<Article[]> => {
   const data = await res.json();
   return data.map(mapArticle).slice(0, 2);
 };
-
+// 1. Replace getLatestArticles with this:
 export const getLatestArticles = async (): Promise<Article[]> => {
-  if (!API_URL) return new Promise((resolve) => setTimeout(() => resolve(mockArticles.slice(0, 6)), 100));
-  const res = await fetch(`${API_URL}/articles?limit=6`, { next: { revalidate: 60 } });
+  const videosAsArticles: Article[] = mockVideos.map(v => ({
+    id: parseInt(v.id.replace('v', '')) + 1000, slug: v.id, thumbnail: v.thumbnail, author: 'Shambel', views: 12000, readingTime: parseInt(v.duration) || 10,
+    title_en: v.title_en, title_am: v.title_am, excerpt_en: 'Watch this premium video tutorial.', excerpt_am: 'ይህን ምርጥ የቪዲዮ ማስተማሪያ ይመልከቱ።',
+    category_en: 'Video Tutorials', category_am: 'የቪዲዮ ማስተማሪያዎች', date_en: 'May 02, 2024', date_am: 'ግንቦት 02፣ 2024',
+    content_en: `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${v.youtubeId}" frameborder="0" allowfullscreen></iframe>`,
+    youtubeId: v.youtubeId, duration: v.duration
+  }));
+
+  // Combine and sort by date descending (latest first)
+  const allContent = [...mockArticles, ...videosAsArticles].sort((a, b) => new Date(b.date_en).getTime() - new Date(a.date_en).getTime());
+
+  if (!API_URL) return new Promise((resolve) => setTimeout(() => resolve(allContent.slice(0, 8)), 100));
+  const res = await fetch(`${API_URL}/articles?limit=8`, { next: { revalidate: 60 } });
   if (!res.ok) return [];
   const data = await res.json();
   return data.map(mapArticle);
 };
 
+// 2. Replace getAllArticles with this:
 export const getAllArticles = async (page: number = 1, limit: number = 6): Promise<{ articles: Article[], totalPages: number }> => {
+  const videosAsArticles: Article[] = mockVideos.map(v => ({
+    id: parseInt(v.id.replace('v', '')) + 1000, slug: v.id, thumbnail: v.thumbnail, author: 'Shambel', views: 12000, readingTime: parseInt(v.duration) || 10,
+    title_en: v.title_en, title_am: v.title_am, excerpt_en: 'Watch this premium video tutorial.', excerpt_am: 'ይህን ምርጥ የቪዲዮ ማስተማሪያ ይመልከቱ።',
+    category_en: 'Video Tutorials', category_am: 'የቪዲዮ ማስተማሪያዎች', date_en: 'May 02, 2024', date_am: 'ግንቦት 02፣ 2024',
+    content_en: `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${v.youtubeId}" frameborder="0" allowfullscreen></iframe>`,
+    youtubeId: v.youtubeId, duration: v.duration
+  }));
+
+  // Combine and sort by date descending (latest first)
+  const allContent = [...mockArticles, ...videosAsArticles].sort((a, b) => new Date(b.date_en).getTime() - new Date(a.date_en).getTime());
+
   if (!API_URL) {
     return new Promise((resolve) => setTimeout(() => {
       const start = (page - 1) * limit;
       const end = start + limit;
-      resolve({ articles: mockArticles.slice(start, end), totalPages: Math.ceil(mockArticles.length / limit) });
+      resolve({ articles: allContent.slice(start, end), totalPages: Math.ceil(allContent.length / limit) });
     }, 100));
   }
   const res = await fetch(`${API_URL}/articles?page=${page}&limit=${limit}`, { next: { revalidate: 60 } });
   if (!res.ok) return { articles: [], totalPages: 0 };
   const data = await res.json();
   return { articles: data.data.map(mapArticle), totalPages: data.totalPages || 1 };
+};
+
+// 3. Replace getRelatedArticles with this:
+export const getRelatedArticles = async (category_en: string, currentId: number): Promise<Article[]> => {
+  const videosAsArticles: Article[] = mockVideos.map(v => ({
+    id: parseInt(v.id.replace('v', '')) + 1000, slug: v.id, thumbnail: v.thumbnail, author: 'Shambel', views: 12000, readingTime: parseInt(v.duration) || 10,
+    title_en: v.title_en, title_am: v.title_am, excerpt_en: 'Watch this premium video tutorial.', excerpt_am: 'ይህን ምርጥ የቪዲዮ ማስተማሪያ ይመልከቱ።',
+    category_en: 'Video Tutorials', category_am: 'የቪዲዮ ማስተማሪያዎች', date_en: 'May 02, 2024', date_am: 'ግንቦት 02፣ 2024',
+    content_en: `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${v.youtubeId}" frameborder="0" allowfullscreen></iframe>`,
+    youtubeId: v.youtubeId, duration: v.duration
+  }));
+
+  const allContent = [...mockArticles, ...videosAsArticles];
+
+  if (!API_URL) {
+    // Try to find 3 articles in the same category
+    let related = allContent.filter(a => a.category_en === category_en && a.id !== currentId);
+    // If less than 3, fill with the latest articles from other categories
+    if (related.length < 3) {
+      const fillers = allContent.filter(a => a.category_en !== category_en && a.id !== currentId);
+      related = [...related, ...fillers];
+    }
+    return new Promise((resolve) => setTimeout(() => resolve(related.slice(0, 3)), 100));
+  }
+  const res = await fetch(`${API_URL}/articles?category=${category_en}&limit=3`, { next: { revalidate: 60 } });
+  if (!res.ok) return [];
+  const data = await res.json();
+  return data.filter((a: any) => a.id !== currentId).slice(0, 3).map(mapArticle);
+};
+
+// 3. Add this new function at the very bottom of the file (after searchArticles):
+export const getVideoById = async (id: string): Promise<Article | null> => {
+  if (!API_URL) {
+    const video = mockVideos.find(v => v.id === id);
+    if (!video) return null;
+    return {
+      id: parseInt(video.id.replace('v', '')) + 1000, slug: video.id, thumbnail: video.thumbnail, author: 'Shambel', views: 12000, readingTime: parseInt(video.duration) || 10,
+      title_en: video.title_en, title_am: video.title_am, excerpt_en: 'Watch this premium video tutorial.', excerpt_am: 'ይህን ምርጥ የቪዲዮ ማስተማሪያ ይመልከቱ።',
+      category_en: 'Video Tutorials', category_am: 'የቪዲዮ ማስተማሪያዎች', date_en: 'May 02, 2024', date_am: 'ግንቦት 02፣ 2024',
+      content_en: `<iframe width="100%" height="500" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allowfullscreen></iframe>`,
+      youtubeId: video.youtubeId, duration: video.duration
+    };
+  }
+  // Future API integration:
+  const res = await fetch(`${API_URL}/videos/${id}`, { next: { revalidate: 60, tags: ['video', id] } });
+  if (!res.ok) return null;
+  const data = await res.json();
+  return mapArticle(data);
 };
 
 export const getTrendingArticles = async (): Promise<Article[]> => {
@@ -99,13 +168,7 @@ export const getArticleBySlug = async (slug: string): Promise<Article | null> =>
   return mapArticle(data);
 };
 
-export const getRelatedArticles = async (category_en: string, currentId: number): Promise<Article[]> => {
-  if (!API_URL) return new Promise((resolve) => setTimeout(() => resolve(mockArticles.filter(a => a.category_en === category_en && a.id !== currentId).slice(0, 3)), 100));
-  const res = await fetch(`${API_URL}/articles?category=${category_en}&limit=3`, { next: { revalidate: 60 } });
-  if (!res.ok) return [];
-  const data = await res.json();
-  return data.filter((a: any) => a.id !== currentId).slice(0, 3).map(mapArticle);
-};
+
 
 export const getVideos = async (): Promise<Video[]> => {
   if (!API_URL) return new Promise((resolve) => setTimeout(() => resolve(mockVideos), 100));
