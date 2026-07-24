@@ -1,14 +1,9 @@
 {
   "pages": {
-    "/article/[slug]/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/article/[slug]/page.js"
-    ],
-    "/article/[slug]/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/article/[slug]/loading.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -31,25 +26,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/page": [
+    "/article/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/article/[slug]/page.js"
     ],
-    "/category/[slug]/page": [
+    "/article/[slug]/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/category/[slug]/page.js"
+      "static/chunks/app/article/[slug]/loading.js"
     ],
     "/articles/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/articles/page.js"
-    ],
-    "/videos/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/videos/[id]/page.js"
     ]
   }
 }
