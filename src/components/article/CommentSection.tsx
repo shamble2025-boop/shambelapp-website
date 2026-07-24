@@ -2,14 +2,14 @@
 import { useState } from 'react';
 import { MessageCircle, Send } from 'lucide-react';
 import T from '@/components/ui/T';
+import { useApp } from '@/context/AppContext';
 
 export default function CommentSection({ articleId }: { articleId: number }) {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState<{ id: number; text: string; author: string }[]>([]);
 
+  const { t } = useApp();
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!comment.trim()) return;
     
     // INTEGRATION: Replace with POST fetch to your API
     // await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${articleId}/comments`, { method: 'POST', body: JSON.stringify({ text: comment }) });
@@ -29,7 +29,7 @@ export default function CommentSection({ articleId }: { articleId: number }) {
           onChange={(e) => setComment(e.target.value)}
           className="w-full p-4 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-accent text-primary dark:text-white transition-all" 
           rows={3} 
-          placeholder="Join the discussion..."
+         placeholder={t('Join the discussion...', 'ክርክሩን ይቀላቹ...')}
         ></textarea>
         <button type="submit" className="mt-4 px-6 py-2 bg-primary text-white dark:bg-accent dark:text-black rounded-full text-sm font-bold flex items-center gap-2 hover:opacity-80 transition-opacity">
           <T en="Post Comment" am="አስተያየት አስቀምጥ" /> <Send className="w-4 h-4" />

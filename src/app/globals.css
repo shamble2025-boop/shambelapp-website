@@ -29,3 +29,9 @@ body { font-family: var(--font-inter), sans-serif; -webkit-font-smoothing: antia
 .lang-am { display: none; }
 html.am .lang-en { display: none; }
 html.am .lang-am { display: inline; }
+
+/* Block-level Language Switcher (for HTML content) */
+.lang-block-en { display: block; }
+.lang-block-am { display: none; }
+html.am .lang-block-en { display: none; }
+html.am .lang-block-am { display: block; }

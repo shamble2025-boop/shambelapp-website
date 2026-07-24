@@ -1,4 +1,5 @@
 import { getArticleBySlug, getRelatedArticles } from '@/services/api.service';
+import AuthorCard from '@/components/article/AuthorCard';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Eye, Clock, Home } from 'lucide-react';
@@ -6,7 +7,7 @@ import ShareButtons from '@/components/article/ShareButtons';
 import CommentSection from '@/components/article/CommentSection';
 import ArticleCard from '@/components/ui/ArticleCard';
 import T from '@/components/ui/T';
-
+import ReadingProgress from '@/components/ui/ReadingProgress';
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = await getArticleBySlug(params.slug);
   if (!article) return { title: 'Article Not Found | Shambel App' };
@@ -26,7 +27,8 @@ export default async function ArticleDetail({ params }: { params: { slug: string
   const shareTitle = article.title_en;
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-12">
+    <article className="max-w-3xl mx-auto px-4 py-12 relative">
+  <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: article.title_en, image: [article.thumbnail], datePublished: article.date_en, author: [{ '@type': 'Person', name: article.author }] }) }} />
       
       <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
@@ -55,10 +57,16 @@ export default async function ArticleDetail({ params }: { params: { slug: string
       <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-soft my-8">
         <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
       </div>
+      <div 
+        className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-en"
+        dangerouslySetInnerHTML={{ __html: article.content_en || '' }} 
+      />
+      <div 
+        className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-am"
+        dangerouslySetInnerHTML={{ __html: article.content_am || '' }} 
+      />
 
-      <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-        <T en={article.content_en || ''} am={article.content_am || ''} />
-      </div>
+      <AuthorCard />
 
       <div className="my-12 h-32 w-full bg-gray-100 dark:bg-gray-900 border border-dashed border-gray-300 dark:border-gray-700 rounded-2xl flex items-center justify-center">
         <span className="text-gray-400 text-xs font-mono uppercase tracking-widest"><T en="Advertisement Space" am="የማስታወቂያ ቦታ" /></span>

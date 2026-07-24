@@ -8,6 +8,7 @@ interface AppContextType {
   isMobileMenuOpen: boolean; toggleMobileMenu: () => void;
   darkMode: boolean; toggleDarkMode: () => void;
   lang: Lang; toggleLanguage: () => void; setLang: (lang: Lang) => void;
+  t: (en: string, am: string) => string;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -45,6 +46,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const toggleLanguage = () => setLang(lang === 'en' ? 'am' : 'en');
+  const t = (en: string, am: string) => (lang === 'en' ? en : am);
   const openSearch = () => { setIsSearchOpen(true); document.body.style.overflow = 'hidden'; };
   const closeSearch = () => { setIsSearchOpen(false); document.body.style.overflow = 'auto'; };
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -57,7 +59,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ isSearchOpen, openSearch, closeSearch, isMobileMenuOpen, toggleMobileMenu, darkMode, toggleDarkMode, lang, toggleLanguage, setLang }}>
+        <AppContext.Provider value={{ isSearchOpen, openSearch, closeSearch, isMobileMenuOpen, toggleMobileMenu, darkMode, toggleDarkMode, lang, toggleLanguage, setLang, t }}>
       {children}
     </AppContext.Provider>
   );
