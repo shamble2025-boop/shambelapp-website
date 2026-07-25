@@ -26,16 +26,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/articles/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/articles/page.js"
-    ],
-    "/videos/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/videos/[id]/page.js"
-    ],
     "/article/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -51,15 +41,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/videos/page.js"
     ],
-    "/help/page": [
+    "/videos/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/help/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/videos/[id]/page.js"
     ]
   }
 }

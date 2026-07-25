@@ -35,8 +35,8 @@ export default async function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {trending.map((article) => (
-            <Link href={`/article/${article.slug}`} key={article.id} className="w-full group block bg-white dark:bg-primary-light rounded-2xl shadow-soft border border-gray-100 dark:border-gray-800 overflow-hidden card-hover">
-              <div className="relative w-full h-40 overflow-hidden">
+                      <Link href={`/article/${article.slug}`} key={article.id} className="w-full group block bg-white dark:bg-primary-light rounded-2xl shadow-soft border border-gray-100 dark:border-gray-800 overflow-hidden card-hover">
+                           <div className="relative w-full aspect-video overflow-hidden rounded-xl">
                 <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="300px" />
               </div>
               <div className="p-5">

@@ -41,8 +41,15 @@ export default async function ArticleDetail({ params }: { params: { slug: string
       </h1>
       <p className="text-xl text-gray-500 dark:text-gray-400 mt-4"><T en={article.excerpt_en} am={article.excerpt_am} /></p>
 
-      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-soft my-8">
-        <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-soft my-8 bg-gray-100 dark:bg-gray-800">
+        <Image 
+          src={article.thumbnail} 
+          alt={article.title_en} 
+          fill 
+          className="object-cover" 
+          priority 
+          sizes="(max-width: 768px) 100vw, 800px" 
+        />
       </div>
 
       <div className="flex items-center justify-between flex-wrap gap-4 mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">

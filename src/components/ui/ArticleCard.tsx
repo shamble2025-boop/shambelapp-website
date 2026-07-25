@@ -12,7 +12,7 @@ export default function ArticleCard({ article }: { article: Article }) {
           src={article.thumbnail} 
           alt={article.title_en} 
           fill 
-          className="card-img object-cover transition-transform duration-500" 
+          className="object-cover transition-transform duration-500 group-hover:scale-105" 
           sizes="(max-width: 768px) 100vw, 33vw" 
         />
         {article.youtubeId && (
