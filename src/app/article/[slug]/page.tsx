@@ -36,34 +36,43 @@ export default async function ArticleDetail({ params }: { params: { slug: string
         <Link href={`/category/${article.category_en.toLowerCase().replace(/\s/g, '-')}`} className="hover:text-accent"><T en={article.category_en} am={article.category_am} /></Link>
       </nav>
 
-      <h1 className="text-4xl md:text-5xl font-bold text-primary dark:text-white leading-tight tracking-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-white leading-tight tracking-tight break-words">
         <T en={article.title_en} am={article.title_am} />
       </h1>
-      <p className="text-xl text-gray-500 dark:text-gray-400 mt-4"><T en={article.excerpt_en} am={article.excerpt_am} /></p>
+      <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 mt-4 break-words"><T en={article.excerpt_en} am={article.excerpt_am} /></p>
 
-      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-soft my-8">
-        <Image src={article.thumbnail} alt={article.title_en} fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 800px" />
+      <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-soft my-8 bg-gray-100 dark:bg-gray-800">
+        <Image 
+          src={article.thumbnail} 
+          alt={article.title_en} 
+          fill 
+          className="object-cover" 
+          priority 
+          sizes="(max-width: 768px) 100vw, 800px" 
+        />
       </div>
 
-      <div className="flex items-center justify-between flex-wrap gap-4 mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
-        <div className="flex items-center gap-6 text-gray-500 dark:text-gray-400 text-sm">
+      <div className="flex flex-col gap-4 mb-8 pb-6 border-b border-gray-100 dark:border-gray-800">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-500 dark:text-gray-400 text-sm">
           <span className="flex items-center gap-2 font-medium text-gray-700 dark:text-gray-300">
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center text-black font-bold">{article.author[0]}</div>
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded-full flex items-center justify-center text-black font-bold text-xs md:text-sm">{article.author[0]}</div>
             {article.author}
           </span>
           <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> <T en={article.date_en} am={article.date_am} /></span>
           <span className="flex items-center gap-2"><Eye className="w-4 h-4" /> {article.views.toLocaleString()}</span>
           <span className="hidden sm:flex items-center gap-2"><Clock className="w-4 h-4" /> <T en={`${article.readingTime} min`} am={`${article.readingTime} ደቂቃ`} /></span>
         </div>
-        <ShareButtons url={shareUrl} title={shareTitle} />
+        <div className="w-full sm:w-auto">
+          <ShareButtons url={shareUrl} title={shareTitle} />
+        </div>
       </div>
 
       <div 
-        className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-en"
+        className="prose dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-en break-words overflow-x-auto"
         dangerouslySetInnerHTML={{ __html: article.content_en || '' }} 
       />
       <div 
-        className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-am"
+        className="prose dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 lang-block-am break-words overflow-x-auto"
         dangerouslySetInnerHTML={{ __html: article.content_am || '' }} 
       />
 

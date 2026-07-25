@@ -36,20 +36,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/article/[slug]/loading.js"
     ],
-    "/about/page": [
+    "/articles/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/about/page.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
-    ],
-    "/help/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/help/page.js"
+      "static/chunks/app/articles/page.js"
     ]
   }
 }
