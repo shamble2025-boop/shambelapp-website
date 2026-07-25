@@ -1197,10 +1197,6 @@ video {
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1979,4 +1975,26 @@ html.am .lang-block-am { display: block; }
 .\[\&\:nth-child\(5\)\]\:hover\:\!bg-\[\#E4405F\]:hover:nth-child(5) {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(228 64 95 / var(--tw-bg-opacity, 1)) !important;
+}
+.\[\&_iframe\]\:my-4 iframe {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.\[\&_iframe\]\:aspect-video iframe {
+  aspect-ratio: 16 / 9;
+}
+.\[\&_iframe\]\:h-auto iframe {
+  height: auto;
+}
+.\[\&_iframe\]\:h-full iframe {
+  height: 100%;
+}
+.\[\&_iframe\]\:w-full iframe {
+  width: 100%;
+}
+.\[\&_iframe\]\:overflow-hidden iframe {
+  overflow: hidden;
+}
+.\[\&_iframe\]\:rounded-2xl iframe {
+  border-radius: 1.5rem;
 }

@@ -56,9 +56,10 @@ export default async function VideoDetailPage({ params }: { params: { id: string
       </div>
 
       {/* Render YouTube Iframe Content */}
-      <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-8">
-        <div dangerouslySetInnerHTML={{ __html: video.content_en || '' }} />
-      </div>
+            <div 
+        className="prose dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 [&_iframe]:w-full [&_iframe]:h-full [&_iframe]:aspect-video [&_iframe]:rounded-2xl [&_iframe]:overflow-hidden [&_iframe]:my-4"
+        dangerouslySetInnerHTML={{ __html: video.content_en || '' }} 
+      />
 
       {/* In-Article Ad */}
       <div className="my-12 h-32 w-full bg-gray-100 dark:bg-gray-900 border border-dashed border-gray-300 dark:border-gray-700 rounded-2xl flex items-center justify-center">

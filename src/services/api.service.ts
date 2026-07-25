@@ -58,8 +58,8 @@ const mockArticles: Article[] = [
 ];
 
 const mockVideos: Video[] = [
-  { id: 'v1', title_en: 'Build a Full-Stack App in 10 Minutes', title_am: 'ሙሉ ስታክ መተግበሪያ በ10 ደቂቃ ይገንቡ', thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80', youtubeId: 'dQw4w9WgXcQ', duration: '10:24' },
-  { id: 'v2', title_en: 'CSS Grid Mastery', title_am: 'CSS ግሪድ ማስተማር', thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80', youtubeId: 'dQw4w9WgXcQ', duration: '08:15' }
+  { id: 'v1', title_en: ' turn off the setting increase your battery life', title_am: 'የስልካችንን ባትሪ የሚገድሉ አደገኛ setting አሁን ግቡና አስተካክሎ ', thumbnail: '/7PdIZBMvNqA-HD.jpg', youtubeId: '7PdIZBMvNqA', duration: '10:24' },
+  { id: 'v2', title_en: 'How to use notion app Write notes, plan projects ', title_am: 'የኖሽን አፕ አጠቃቀም', thumbnail: '/9mRKyJGqyJY-HD.jpg', youtubeId: '9mRKyJGqyJY', duration: '08:15' }
 ];
 
 export const getFeaturedArticles = async (): Promise<Article[]> => {

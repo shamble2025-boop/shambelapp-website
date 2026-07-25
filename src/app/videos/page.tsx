@@ -13,8 +13,8 @@ export default async function VideosPage() {
       <h1 className="text-4xl font-extrabold text-primary dark:text-white tracking-tight mb-12"><T en="Video Tutorials" am="የቪዲዮ ማስተማሪያዎች" /></h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {videos.map((video) => (
-        <Link href={`/videos/${video.id}`} key={video.id} className="group block">
-            <div className="relative w-full h-48 overflow-hidden rounded-xl mb-4">
+               <Link href={`/videos/${video.id}`} key={video.id} className="group block">
+            <div className="relative w-full aspect-video overflow-hidden rounded-xl mb-4">
               <Image src={video.thumbnail} alt={video.title_en} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="400px" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-colors">
                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
